@@ -7,16 +7,10 @@ using SystemMonitoringTool.Classes;
 
 namespace SystemMonitoringTool.Interfaces
 {
-    public interface IMonitorPlugin
+    public interface IService
     {
-        string Name { get; }
-        string GetStatus()
-        {
-            return "";
-        }
 
-        void Execute(ResourceStatusPackage package);
+        void ReceiveStatus(ResourceStatusPackage package);
 
     }
-
 }
