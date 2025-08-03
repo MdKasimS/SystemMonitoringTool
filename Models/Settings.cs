@@ -39,11 +39,18 @@ namespace SystemMonitoringTool.Models
             UpdateSettings("User_Name", userName);
         }
 
-        public static void UpdatePasword(string password)
+        public static void UpdateDbPasword(string password)
         {
             Configuration.Instance.Settings.DBType.Password = password;
 
-            UpdateSettings("User_Name", password);
+            UpdateSettings("Password", password);
+        }
+
+        public static void UpdateDbUrl(string dbUrl)
+        {
+            Configuration.Instance.Settings.DBType.DB_URL = dbUrl;
+
+            UpdateSettings("DB_URL", dbUrl);
         }
 
         private static void UpdateSettings(string key, string value)

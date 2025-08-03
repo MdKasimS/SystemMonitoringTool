@@ -26,9 +26,9 @@ namespace SystemMonitoringTool.Views
                 "2. Update Logging Server URl ",
                 "3. Update Log File Path",
                 "4. Update Time Interval",
-                "5. Update Database URL",
-                "6. Update Database User Name",
-                "7. Update Database User Name",
+                "5. Update Database User Name",
+                "6. Update Database URL",
+                "7. Update Database Password",
                 "8. Save New Settings",
                 "9. Exit",
             };
@@ -81,8 +81,18 @@ namespace SystemMonitoringTool.Views
                         break;
 
                     case 5:
-                        Console.Write("Continue SQLite (0-> false |1-> true) : ");
+                        Console.Write("Please Enter New Db User Name:  ");
                         SettingsViewModel.Instance.UpdateUserNameCommand();
+                        break;
+
+                    case 6:
+                        Console.Write("Please Enter New Db URL:  ");
+                        SettingsViewModel.Instance.UpdateDbUrlCommand();
+                        break;
+
+                    case 7:
+                        Console.Write("Please Enter New Db Passowrd:  ");
+                        SettingsViewModel.Instance.UpdateDbPasswordCommand();
                         break;
 
                     default:

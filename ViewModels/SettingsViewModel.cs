@@ -38,7 +38,21 @@ namespace SystemMonitoringTool.ViewModels
         {
             string userName = Console.ReadLine();
 
-            Settings.UpdateTimeInterval(userName);
+            Settings.UpdateUserName(userName);
+        }
+
+        public async void UpdateDbUrlCommand()
+        {
+            string dbUrl = Console.ReadLine();
+
+            Settings.UpdateDbUrl(dbUrl);
+        }
+
+        public async void UpdateDbPasswordCommand()
+        {
+            string dbUrl = Console.ReadLine();
+
+            Settings.UpdateDbPassword(dbUrl);
         }
     }
 }
