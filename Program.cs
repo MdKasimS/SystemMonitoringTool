@@ -9,6 +9,7 @@ public class Program
 {
     private static void Main(string[] args)
     {
+        //basic test to see if the program is running
         new ResourceMonitorService().StartMonitoringAsync(CancellationToken.None).GetAwaiter().GetResult();
 
         var services = new ServiceCollection();
