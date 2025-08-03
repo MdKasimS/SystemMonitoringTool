@@ -82,7 +82,7 @@ namespace SystemMonitoringTool.Views
 
                     case 5:
                         Console.Write("Continue SQLite (0-> false |1-> true) : ");
-                        SettingsViewModel.Instance.UpdateSqliteCommand();
+                        SettingsViewModel.Instance.UpdateUserNameCommand();
                         break;
 
                     default:
