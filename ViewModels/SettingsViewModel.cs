@@ -50,9 +50,9 @@ namespace SystemMonitoringTool.ViewModels
 
         public async void UpdateDbPasswordCommand()
         {
-            string dbUrl = Console.ReadLine();
+            string dbPwd = Console.ReadLine();
 
-            Settings.UpdateDbPassword(dbUrl);
+            Settings.UpdateDbPassword(dbPwd);
         }
     }
 }

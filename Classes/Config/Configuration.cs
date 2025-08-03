@@ -19,8 +19,6 @@ namespace SystemMonitoringTool.Classes.Config
 
         private Configuration()
         {
-            //ConfigJson = File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "appsettings.json"));
-
             var config = new ConfigurationBuilder()
                 .SetBasePath(AppContext.BaseDirectory)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -36,15 +34,10 @@ namespace SystemMonitoringTool.Classes.Config
 
             ConfigJson = UpdateConfigJson(Settings);
 
-            //Settings.LoggingServer = Environment.GetEnvironmentVariable("LOGGING_SERVER") ?? "localhost";
-            //Settings.LogFile = Environment.GetEnvironmentVariable("LOG_FILE") ?? "logs/system.log";
-            //Settings.DBType = Environment.GetEnvironmentVariable("DB_TYPE") ?? "SQLite";
-
         }
 
         public override string? ToString()
         {
-            //return $"{Settings.OS}\t{Settings.LoggingServer}\t{Settings.LogFile}\t{Settings.DBType.SQLite}";
             return ConfigJson;
         }
         
