@@ -2,8 +2,9 @@
 using SystemMonitoringTool.Classes;
 using SystemMonitoringTool.Classes.Resource;
 using SystemMonitoringTool.Interfaces;
+using SystemMonitoringTool.Models;
 
-namespace SystemMonitoringTool.Models
+namespace SystemMonitoringTool.Classes.Plugins
 {
     public class CpuUsageMonitor : IMonitorPlugin
     {
@@ -14,7 +15,7 @@ namespace SystemMonitoringTool.Models
             using (var cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total"))
             {
                 cpuCounter.NextValue(); // First call returns 0
-                System.Threading.Thread.Sleep(1000); // Wait a second to get accurate reading
+                Thread.Sleep(1000); // Wait a second to get accurate reading
                 float value = cpuCounter.NextValue();
                 return $"{value:F2}";
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SystemMonitoringTool.Classes.Resource;
 using SystemMonitoringTool.Interfaces;
 
-namespace SystemMonitoringTool.Models
+namespace SystemMonitoringTool.Classes.Plugins
 {
     public class DriveUsageMonitor : IMonitorPlugin
     {
@@ -35,7 +35,7 @@ namespace SystemMonitoringTool.Models
                 totalSize += drive.TotalSize;
                 freeSpace += drive.AvailableFreeSpace;
 
-                var tempUsedSpace = (drive.TotalSize - drive.AvailableFreeSpace);
+                var tempUsedSpace = drive.TotalSize - drive.AvailableFreeSpace;
                 usedSpace += tempUsedSpace;
 
             }

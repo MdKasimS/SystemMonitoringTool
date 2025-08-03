@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics;
 using SystemMonitoringTool.Classes;
+using SystemMonitoringTool.Classes.Plugins;
 using SystemMonitoringTool.Interfaces;
-using SystemMonitoringTool.Models;
 using SystemMonitoringTool.Services;
 using SystemMonitoringTool.Views;
 
