@@ -1,6 +1,6 @@
 ﻿
 
-namespace CineComplex.Classes.Base
+namespace SystemMonitoringTool.Classes.Base
 {
     public abstract class AViewBase<T> : ABaseSingleton<T> where T : AViewBase<T>, new()
     {
