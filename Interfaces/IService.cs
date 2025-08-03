@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SystemMonitoringTool.Classes;
+using SystemMonitoringTool.Classes.Resource;
 
 namespace SystemMonitoringTool.Interfaces
 {
     public interface IService
     {
-
-        void ReceiveStatus(ResourceStatusPackage package);
+        void Process(ResourceStatus status);
 
     }
 }

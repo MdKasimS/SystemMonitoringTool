@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SystemMonitoringTool.Classes;
+using SystemMonitoringTool.Classes.Config;
 using SystemMonitoringTool.Models;
 
 namespace SystemMonitoringTool.Services
@@ -30,8 +30,6 @@ namespace SystemMonitoringTool.Services
                 Console.WriteLine($" Available RAM: {availableRam:F2} MB");
 
                 Console.WriteLine($" Drive Usage:\n {driveUsage:F2}");
-
-                Console.WriteLine(Configuration.Instance.ToString());
 
                 await Task.Delay(1000); // Refresh every second
             }

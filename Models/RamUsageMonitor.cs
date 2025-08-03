@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SystemMonitoringTool.Classes.Resource;
 using SystemMonitoringTool.Interfaces;
 
 namespace SystemMonitoringTool.Models
@@ -11,6 +12,11 @@ namespace SystemMonitoringTool.Models
     public class RamUsageMonitor:IMonitorPlugin
     {
         public string Name => "RAM";
+
+        public void Execute(ResourceStatusPackage package)
+        {
+            throw new NotImplementedException();
+        }
 
         public string GetStatus()
         {

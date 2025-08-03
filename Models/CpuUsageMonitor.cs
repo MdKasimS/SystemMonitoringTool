@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using SystemMonitoringTool.Classes;
+using SystemMonitoringTool.Classes.Resource;
 using SystemMonitoringTool.Interfaces;
 
 namespace SystemMonitoringTool.Models
@@ -15,14 +16,8 @@ namespace SystemMonitoringTool.Models
                 cpuCounter.NextValue(); // First call returns 0
                 System.Threading.Thread.Sleep(1000); // Wait a second to get accurate reading
                 float value = cpuCounter.NextValue();
-                return $"CPU Usage: {value:F2}%";
+                return $"{value:F2}";
 
-                //return new ResourceStatus
-                //{
-                //    ResourceName = Name,
-                //    UsagePercentage = GetCpuUsage(),
-                //    Timestamp = DateTime.UtcNow
-                //};
             }
         }
 
@@ -31,18 +26,11 @@ namespace SystemMonitoringTool.Models
             var status = new ResourceStatus
             {
                 ResourceType = "CPU",
-                Usage = GetCpuUsage(),
+                Usage = GetStatus(),
                 Timestamp = DateTime.UtcNow
             };
 
             package.Publish(status);
-        }
-
-
-        private double GetCpuUsage()
-        {
-            // Placeholder logic
-            return new Random().NextDouble() * 100;
         }
 
     }

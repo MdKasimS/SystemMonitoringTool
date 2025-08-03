@@ -8,13 +8,12 @@ using SystemMonitoringTool.Interfaces;
 
 namespace SystemMonitoringTool.Services
 {
-    public class ConsoleLoggingService : IService
+    internal class LogService : IService
     {
         public void Process(ResourceStatus status)
         {
-            Console.WriteLine($"[{status.Timestamp}] {status.ResourceType} Usage: {status.Usage:F2}%");
+            throw new NotImplementedException();
         }
+
     }
-
 }
-

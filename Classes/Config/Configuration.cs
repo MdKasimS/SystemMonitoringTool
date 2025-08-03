@@ -5,9 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 
-namespace SystemMonitoringTool.Classes
+namespace SystemMonitoringTool.Classes.Config
 {
-   
 
     public sealed class Configuration
     {
@@ -24,11 +23,17 @@ namespace SystemMonitoringTool.Classes
                 .Build();
 
             Settings = config.Get<AppConfiguration>();
+            Settings.OS = OSHelper.GetOSName();
+            
+            //Settings.LoggingServer = Environment.GetEnvironmentVariable("LOGGING_SERVER") ?? "localhost";
+            //Settings.LogFile = Environment.GetEnvironmentVariable("LOG_FILE") ?? "logs/system.log";
+            //Settings.DBType = (DBTypeConfig)Enum.Parse(typeof(DBTypeConfig), Environment.GetEnvironmentVariable("DB_TYPE") ?? "SQLite", true);
+
         }
 
-        public override string? ToString()
-        {
-            return $"{Settings.OS}\t{Settings.LoggingServer}\t{Settings.LogFile}\t{Settings.DBType.SQLite}";
-        }
+        //public override string? ToString()
+        //{
+        //    return $"{Settings.OS}\t{Settings.LoggingServer}\t{Settings.LogFile}\t{Settings.DBType.SQLite}";
+        //}
     }
 }

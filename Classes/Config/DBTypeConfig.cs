@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SystemMonitoringTool.Classes
+namespace SystemMonitoringTool.Classes.Config
 {
     public class DBTypeConfig
     {

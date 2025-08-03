@@ -9,7 +9,7 @@ public class Program
 {
     private static void Main(string[] args)
     {
-       new ResourceMonitorService().StartMonitoringAsync(CancellationToken.None).GetAwaiter().GetResult();
+        new ResourceMonitorService().StartMonitoringAsync(CancellationToken.None).GetAwaiter().GetResult();
 
         var services = new ServiceCollection();
 

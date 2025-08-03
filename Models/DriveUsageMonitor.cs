@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SystemMonitoringTool.Classes.Resource;
 using SystemMonitoringTool.Interfaces;
 
 namespace SystemMonitoringTool.Models
@@ -10,6 +11,12 @@ namespace SystemMonitoringTool.Models
     public class DriveUsageMonitor : IMonitorPlugin
     {
         public string Name => "Drive";
+
+        public void Execute(ResourceStatusPackage package)
+        {
+            throw new NotImplementedException();
+        }
+
         public string GetStatus()
         {
             string driveData = string.Empty;

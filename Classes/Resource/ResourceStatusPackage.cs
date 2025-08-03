@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SystemMonitoringTool.Classes
+namespace SystemMonitoringTool.Classes.Resource
 {
     public class ResourceStatusPackage
     {
