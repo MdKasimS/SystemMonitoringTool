@@ -18,7 +18,7 @@ namespace SystemMonitoringTool.Classes.Config
         private Configuration()
         {
             var config = new ConfigurationBuilder()
-                .SetBasePath(AppContext.BaseDirectory) // Ensure Microsoft.Extensions.FileProviders is referenced  
+                .SetBasePath(AppContext.BaseDirectory) 
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
 
@@ -27,13 +27,14 @@ namespace SystemMonitoringTool.Classes.Config
             
             //Settings.LoggingServer = Environment.GetEnvironmentVariable("LOGGING_SERVER") ?? "localhost";
             //Settings.LogFile = Environment.GetEnvironmentVariable("LOG_FILE") ?? "logs/system.log";
-            //Settings.DBType = (DBTypeConfig)Enum.Parse(typeof(DBTypeConfig), Environment.GetEnvironmentVariable("DB_TYPE") ?? "SQLite", true);
+            //Settings.DBType = Environment.GetEnvironmentVariable("DB_TYPE") ?? "SQLite";
 
         }
 
-        //public override string? ToString()
-        //{
-        //    return $"{Settings.OS}\t{Settings.LoggingServer}\t{Settings.LogFile}\t{Settings.DBType.SQLite}";
-        //}
+        public override string? ToString()
+        {
+            //return $"{Settings.OS}\t{Settings.LoggingServer}\t{Settings.LogFile}\t{Settings.DBType.SQLite}";
+            return $"{Settings.OS}\t{Settings.LoggingServer}\t{Settings.LogFile}\t{Settings.TimeInterval}\t{Settings.DBType.SQLite}";
+        }
     }
 }

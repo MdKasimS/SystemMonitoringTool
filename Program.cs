@@ -4,13 +4,14 @@ using SystemMonitoringTool.Classes;
 using SystemMonitoringTool.Interfaces;
 using SystemMonitoringTool.Models;
 using SystemMonitoringTool.Services;
+using SystemMonitoringTool.Views;
 
 public class Program
 {
     private static void Main(string[] args)
     {
         //basic test to see if the program is running
-        new ResourceMonitorService().StartMonitoringAsync(CancellationToken.None).GetAwaiter().GetResult();
+        //new ResourceMonitorService().StartMonitoringAsync(CancellationToken.None).GetAwaiter().GetResult();
 
         var services = new ServiceCollection();
 
@@ -22,6 +23,9 @@ public class Program
 
         var provider = services.BuildServiceProvider();
 
+        var app = MainView.Instance;
+
+        app.View();
     }
 }
 

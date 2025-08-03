@@ -1,14 +1,15 @@
-﻿using SystemMonitoringTool.Classes.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SystemMonitoringTool.Classes.Base;
+using SystemMonitoringTool.Classes.Config;
 using SystemMonitoringTool.Interfaces;
 
 namespace SystemMonitoringTool.Views
 {
-    public class MainView : AViewBase<MainView>, IView
+    public class SettingsView : AViewBase<SettingsView>, IView
     {
         private int _choice = 0;
         public int Choice { get => _choice; set => _choice = value; }
@@ -19,17 +20,23 @@ namespace SystemMonitoringTool.Views
         }
         public void LoadMenuList()
         {
-            MainView.Instance.MenuList = new List<string>() {
-                "1. Start Application ",
-                "2. Settings ",
-                "3. Exit",
+            SettingsView.Instance.MenuList = new List<string>() {
+                "1. Show OS Platform ",
+                "2. Update Logging Server URl ",
+                "3. Update Log File Path",
+                "4. Update Time Interval",
+                "5. Update Database URL",
+                "6. Update Database User Name",
+                "7. Update Database User Name",
+                "8. Exit",
             };
         }
 
         public async Task View()
         {
 
-            MainView.Instance.LoadMenuList();
+            SettingsView.Instance.LoadMenuList();
+
 
             do//main loop
             {
@@ -37,7 +44,9 @@ namespace SystemMonitoringTool.Views
                 Console.WriteLine("\t----- !!! System Monitoring - By MdKasimS !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine("\nMain : ");
+                ShowSettings();
+
+                Console.WriteLine("\nSettings : ");
                 Console.WriteLine("---------------");
 
                 foreach (string instr in Instance.MenuList)
@@ -55,7 +64,7 @@ namespace SystemMonitoringTool.Views
                         break;
 
                     case 2:
-                        SettingsView.Instance.View();
+
                         break;
 
                     case 3:
@@ -70,5 +79,10 @@ namespace SystemMonitoringTool.Views
 
         }
 
+        public async void ShowSettings()
+        {
+            Console.WriteLine(Configuration.Instance.ToString());
+        }
     }
+
 }
