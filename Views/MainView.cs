@@ -1,10 +1,11 @@
-﻿using SystemMonitoringTool.Classes.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SystemMonitoringTool.Classes.Base;
 using SystemMonitoringTool.Interfaces;
+using SystemMonitoringTool.Services;
 
 namespace SystemMonitoringTool.Views
 {
@@ -51,7 +52,7 @@ namespace SystemMonitoringTool.Views
                 switch (Choice)
                 {
                     case 1:
-
+                        new ResourceMonitorService().StartMonitoringAsync(CancellationToken.None).GetAwaiter().GetResult();
                         break;
 
                     case 2:
