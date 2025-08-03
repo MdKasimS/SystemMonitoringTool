@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SystemMonitoringTool.Classes.Config;
+using SystemMonitoringTool.Classes.Plugins;
 using SystemMonitoringTool.Models;
 
 namespace SystemMonitoringTool.Services
