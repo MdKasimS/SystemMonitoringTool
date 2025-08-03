@@ -7,28 +7,38 @@ using System.Text;
 using System.Threading.Tasks;
 using SystemMonitoringTool.Classes.Base;
 using SystemMonitoringTool.Classes.Config;
+using SystemMonitoringTool.Models;
 
 namespace SystemMonitoringTool.ViewModels
 {
     public class SettingsViewModel: AViewModelBase<SettingsViewModel>
     {
-        public async void UpdateLoggingServerUrl()
+        public async void UpdateLoggingServerUrlCommand()
         {
             string newUrl = Console.ReadLine();
 
-            Configuration.Instance.Settings.LoggingServer = newUrl;
-            Configuration.Instance.UpdateConfigJson(Configuration.Instance.Settings);
+            Settings.UpdateLoggingServerUrl(newUrl);
+        }
 
-            string configPath = Path.Combine(AppContext.BaseDirectory, "appsettings.json");
+        public async void UpdateLogFileCommand()
+        {
+            string newLogFileWithFullPath = Console.ReadLine();
 
-            var json = File.ReadAllText(configPath);
-            var jObject = JObject.Parse(json);
+            Settings.UpdateLogFile(newLogFileWithFullPath);
+        }
 
-            jObject["Logging Server"] = newUrl;
+        public async void UpdateTimeIntervalCommand()
+        {
+            string newTimeInterval = Console.ReadLine();
 
-            File.WriteAllText(configPath, jObject.ToString(Formatting.Indented));
+            Settings.UpdateTimeInterval(newTimeInterval);
+        }
 
+        public async void UpdateUserNameCommand()
+        {
+            string userName = Console.ReadLine();
 
+            Settings.UpdateTimeInterval(userName);
         }
     }
 }

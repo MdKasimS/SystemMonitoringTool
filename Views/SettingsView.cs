@@ -67,11 +67,22 @@ namespace SystemMonitoringTool.Views
 
                     case 2:
                         Console.Write("Please Enter New Logging Server URL: ");
-                        SettingsViewModel.Instance.UpdateLoggingServerUrl();
+                        SettingsViewModel.Instance.UpdateLoggingServerUrlCommand();
                         break;
 
                     case 3:
+                        Console.Write("Please Enter New Log File Path(along with file name): ");
+                        SettingsViewModel.Instance.UpdateLogFileCommand();
+                        break;
 
+                    case 4:
+                        Console.Write("Please Enter New Time Interval: ");
+                        SettingsViewModel.Instance.UpdateTimeIntervalCommand();
+                        break;
+
+                    case 5:
+                        Console.Write("Continue SQLite (0-> false |1-> true) : ");
+                        SettingsViewModel.Instance.UpdateSqliteCommand();
                         break;
 
                     default:

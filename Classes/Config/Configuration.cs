@@ -53,7 +53,7 @@ namespace SystemMonitoringTool.Classes.Config
             ConfigJson = "{\n" +
                          $"  \"OS\": \"{setting.OS}\",\n" +
                          $"  \"Logging Server\": \"{setting.LoggingServer}\",\n" +
-                         $"  \"Log File\": \"{setting.LoggingServer}\",\n" +
+                         $"  \"Log File\": \"{setting.LogFile}\",\n" +
                          $"  \"Time Interval\": \"{setting.TimeInterval}\",\n" +
                          "  \"DB Type\": {\n" +
                          $"    \"SQLite\": {setting.DBType.SQLite},\n" +
