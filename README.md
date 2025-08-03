@@ -1,6 +1,6 @@
 Hi Folks!
 
-This is a cross - platform system resources monitoring console application. It uses plugin system that follows event-drive architeture.
+This is a cross - platform system resources monitoring console application. It uses plugin system that follows "event-driven"" architeture.
 
 Resource status pacakges are published and queued to be consumed by logging systems, console, REST API and saving it into database.
 Database, REST API, log file is configurable in appsettings.json
