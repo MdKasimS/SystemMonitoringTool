@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SystemMonitoringTool.Classes.Base;
 using SystemMonitoringTool.Classes.Config;
 using SystemMonitoringTool.Interfaces;
+using SystemMonitoringTool.ViewModels;
 
 namespace SystemMonitoringTool.Views
 {
@@ -28,7 +29,8 @@ namespace SystemMonitoringTool.Views
                 "5. Update Database URL",
                 "6. Update Database User Name",
                 "7. Update Database User Name",
-                "8. Exit",
+                "8. Save New Settings",
+                "9. Exit",
             };
         }
 
@@ -60,11 +62,12 @@ namespace SystemMonitoringTool.Views
                 switch (Choice)
                 {
                     case 1:
-
+                        Instance.ShowOSPlatform();
                         break;
 
                     case 2:
-
+                        Console.Write("Please Enter New Logging Server URL: ");
+                        SettingsViewModel.Instance.UpdateLoggingServerUrl();
                         break;
 
                     case 3:
@@ -83,6 +86,12 @@ namespace SystemMonitoringTool.Views
         {
             Console.WriteLine(Configuration.Instance.ToString());
         }
+
+        public async void ShowOSPlatform()
+        {
+            Console.WriteLine(Configuration.Instance.Settings.OS);
+        }
+
     }
 
 }
